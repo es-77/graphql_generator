@@ -1,0 +1,29 @@
+{
+    "name": "emmanuelsaleem/graphqlgenerator",
+    "description": "this package generate graph ql query",
+    "type": "library",
+    "version": "1.0.0",
+    "require": {
+        "nuwave/lighthouse": "^6.45"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Emmanuelsaleem\\Graphqlgenerator\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Emmanuelsaleem\\Graphqlgenerator\\GraphQlGeneratorServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Emmanuel saleem"
+        }
+    ]
+}
