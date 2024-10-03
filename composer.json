@@ -25,5 +25,10 @@
         {
             "name": "Emmanuel saleem"
         }
-    ]
+    ],
+    "homepage": "https://github.com/es-77/graphql_generator",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/es-77/graphql_generator"
+    }
 }
