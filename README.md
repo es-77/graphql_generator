@@ -21,42 +21,42 @@ query {
   }
 }
 # save query 
-# mutation {
-#   createUser(
-#     id: "12345",
-#     name: "John Doe",
-#     email: "john@example.com",
-#     password: "password123",
-#     created_at: "2023-01-01",
-#     updated_at: "2023-01-01"
-#   ) {
-#     id
-#     name
-#     email
-#   }
-# }
+ mutation {
+  createUser(
+    id: "12345",
+    name: "John Doe",
+    email: "john@example.com",
+    password: "password123",
+    created_at: "2023-01-01",
+    updated_at: "2023-01-01"
+  ) {
+    id
+    name
+    email
+  }
+}
 
 # update query
-# mutation {
-#   updateUser(
-#     id: "12345",
-#     name: "John Doe Updated",
-#     email: "john.updated@example.com"
-#   ) {
-#     id
-#     name
-#     email
-#   }
-# }
+mutation {
+  updateUser(
+    id: "12345",
+    name: "John Doe Updated",
+    email: "john.updated@example.com"
+  ) {
+    id
+    name
+    email
+  }
+}
 
 # delete query 
 
-# mutation {
-#   deleteUser(id: "12345") {
-#     id
-#     name
-#   }
-# }
+mutation {
+  deleteUser(id: "12345") {
+    id
+    name
+  }
+}
 
 
 
