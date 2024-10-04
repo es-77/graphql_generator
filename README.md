@@ -14,7 +14,12 @@ install this package composer require nuwave/lighthouse
 
 ## API Reference
 
+### Route 
+http://localhost:8000/graphql
+
 ### Get all users
+
+
 
 | Query  | Type    | Description                                          |
 |--------|---------|------------------------------------------------------|
@@ -51,3 +56,14 @@ install this package composer require nuwave/lighthouse
 | Mutation  | Type    | Description           |
 |-----------|---------|----------------------|
 | `mutation { deleteUser(id: "12345") { id name } }` | string  | Delete a user by ID    |
+
+# Contact With me
+https://pk.linkedin.com/in/es77
+
+
+
+
+## After installation run command into termainal
+
+php artisan generate:graph-ql-query
+
