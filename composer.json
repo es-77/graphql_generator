@@ -4,7 +4,7 @@
     "type": "library",
     "version": "1.0.0",
     "require": {
-        "nuwave/lighthouse": "^6.45"
+        "laravel/prompts": "^0.3.0"
     },
     "license": "MIT",
     "autoload": {

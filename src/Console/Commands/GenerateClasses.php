@@ -10,13 +10,18 @@ use Emmanuelsaleem\Graphqlgenerator\Services\{
     GraphQlGenerator
 };
 
+use function Laravel\Prompts\text;
+use function Laravel\Prompts\table;
+use function Laravel\Prompts\multiselect;
+
 class GenerateClasses extends Command
 {
     use HelperFunctions, DatabaseConnection, TableColumnsInfo, GraphQlGenerator;
 
     protected $signature = 'generate:graph-ql-query';
-    protected $description = 'Generate Controller, Model, Request, Resource, Migration, Seeder, and Factory based on user input';
+    protected $description = 'create graphql query ';
     protected $columnsName = [];
+    protected $selectedSkipTables = [];
     protected $entityName = '';
 
     public $pdo = '';
@@ -25,14 +30,44 @@ class GenerateClasses extends Command
 
     public function handle()
     {
-        $path = $this->ask('Give the path where you want to add the generated code (e.g., C:/laragon/www/my-laravel-app/app/graphql)');
-        $folderName = $this->ask('Give the folder name (default: graphql)', 'graphql');
+        $path = text(
+            label: 'Give the path where you want to add the generated code? (e.g., C:/laragon/www/my-laravel-app/app/graphql)',
+            placeholder: 'C:/laragon/www/my-laravel-app/app/graphql',
+            hint: '(e.g., C:/laragon/www/my-laravel-app/app/graphql)',
+            required: 'Your Path is required.'
+        );
+        $folderName = text(
+            label: 'Give the folder name? (graphql)',
+            placeholder: 'example graphql',
+            default: 'graphql',
+            required: 'Your folder name is required.'
+        );
+ 
 
+        $arrayOfPDOAndTable = $this->databaseConnection();
+        $this->pdo = $arrayOfPDOAndTable['pdo'];
+        $this->table = $arrayOfPDOAndTable['tables'];
+
+        $tableRows = array_map(fn($tableName) => [$tableName], $this->table);
+
+        table(
+            headers: ['Table Name'],
+            rows: $tableRows
+        );
+
+        $this->selectedSkipTables = multiselect(
+            label: 'Select tables to Skiip generate GraphQL queries for',
+            options: $this->table,
+            // required: true
+        );
+        
+        
         $arrayOfPDOAndTable = $this->databaseConnection();
         $this->pdo = $arrayOfPDOAndTable['pdo'];
         $this->table = $arrayOfPDOAndTable['tables'];
         $this->tableColumnsInfo = $this->tableInfo($this->table,$this->pdo);
         $this->generateGraphQl($this->tableColumnsInfo,$path,$folderName);
-        dd($this->tableColumnsInfo);
+        info('Surprise the world by using this package!');
+        info('install this package composer require nuwave/lighthouse');
     }
 }

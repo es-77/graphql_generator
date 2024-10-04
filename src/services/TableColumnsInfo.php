@@ -14,8 +14,8 @@ trait TableColumnsInfo
     {
         $data = [];
         foreach ($tables as $key => $table_name) {
-            if ($table_name == 'migrations' || $table_name == 'personal_access_tokens' || $table_name == 'password_resets' || $table_name == 'failed_jobs') {
-                // skip tables that we don't want to update
+            
+            if (in_array($table_name,$this->selectedSkipTables) == true) {
                 continue;
             }
         
