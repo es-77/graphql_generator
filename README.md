@@ -20,6 +20,16 @@ query {
     }
   }
 }
+
+#get by id
+query {
+  User(id: "1234") {
+    id
+    name
+    email
+  }
+}
+
 # save query 
  mutation {
   createUser(
