@@ -21,7 +21,7 @@ query {
   }
 }
 
-#get by id
+# get by id
 query {
   User(id: "1234") {
     id
