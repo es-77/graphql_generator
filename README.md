@@ -11,6 +11,10 @@ composer require emmanuelsaleem/graphqlgenerator
 ## next
 install this package composer require nuwave/lighthouse
 
+## After installation run command into termainal
+
+php artisan generate:graph-ql-query
+
 
 ## API Reference
 
@@ -59,11 +63,4 @@ http://localhost:8000/graphql
 
 # Contact With me
 https://pk.linkedin.com/in/es77
-
-
-
-
-## After installation run command into termainal
-
-php artisan generate:graph-ql-query
 
