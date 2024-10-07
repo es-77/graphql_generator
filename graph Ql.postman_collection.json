@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "3d4cf2d9-b3a4-4578-b28d-fd963ea26be6",
+		"name": "graph Ql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21481838",
+		"_collection_link": "https://dark-trinity-874722.postman.co/workspace/testing-url~1a8912e1-5b4d-4133-9036-0836664b820a/collection/21481838-3d4cf2d9-b3a4-4578-b28d-fd963ea26be6?action=share&source=collection_link&creator=21481838"
+	},
+	"item": [
+		{
+			"name": "graph ql",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "# get query\r\nquery {\r\n  Users(first: 31) {\r\n    data {\r\n      id\r\n      name\r\n      email\r\n    }\r\n    paginatorInfo {\r\n      total\r\n      count\r\n      perPage\r\n      currentPage\r\n      lastPage\r\n    }\r\n  }\r\n}\r\n# save query \r\n# mutation {\r\n#   createUser(\r\n#     id: \"12345\",\r\n#     name: \"John Doe\",\r\n#     email: \"john@example.com\",\r\n#     password: \"password123\",\r\n#     created_at: \"2023-01-01\",\r\n#     updated_at: \"2023-01-01\"\r\n#   ) {\r\n#     id\r\n#     name\r\n#     email\r\n#   }\r\n# }\r\n\r\n# update query\r\n# mutation {\r\n#   updateUser(\r\n#     id: \"12345\",\r\n#     name: \"John Doe Updated\",\r\n#     email: \"john.updated@example.com\"\r\n#   ) {\r\n#     id\r\n#     name\r\n#     email\r\n#   }\r\n# }\r\n\r\n# delete query \r\n\r\n# mutation {\r\n#   deleteUser(id: \"12345\") {\r\n#     id\r\n#     name\r\n#   }\r\n# }\r\n\r\n\r\n\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
