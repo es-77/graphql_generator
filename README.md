@@ -15,6 +15,7 @@ install this package composer require nuwave/lighthouse
 
 php artisan generate:graph-ql-query
 
+## download file graph Ql.postman_collection.json into github and import it into postman to test the code
 
 ## API Reference
 
