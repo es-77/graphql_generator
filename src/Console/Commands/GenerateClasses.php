@@ -69,5 +69,12 @@ class GenerateClasses extends Command
         $this->generateGraphQl($this->tableColumnsInfo,$path,$folderName);
         info('Surprise the world by using this package!');
         info('install this package composer require nuwave/lighthouse');
+        exec('composer require nuwave/lighthouse', $output, $returnVar);
+
+        if ($returnVar !== 0) {
+            $this->error("An error occurred while installing the package. composer require nuwave/lighthouse");
+        } else {
+            $this->info("Package installed successfully.");
+        }
     }
 }

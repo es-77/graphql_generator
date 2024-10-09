@@ -1,6 +1,6 @@
 {
     "name": "emmanuelsaleem/graphqlgenerator",
-    "description": "this package generate graph ql query",
+    "description": "this package generate graph ql query add verion in to package",
     "type": "library",
     "require": {
         "laravel/prompts": "^0.3.0"
